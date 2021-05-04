@@ -1,3 +1,71 @@
+minetest.register_craftitem("color_armors:blue_tin_lump", {
+	description = ("Blue Tin Lump"),
+	inventory_image = "color_armors_blue_tin_lump.png",
+})
+
+minetest.register_craftitem("color_armors:green_tin_lump", {
+	description = ("Green Tin Lump"),
+	inventory_image = "color_armors_green_tin_lump.png",
+})
+
+minetest.register_craftitem("color_armors:red_tin_ingot_tin_lump", {
+	description = ("Red Tin Lump"),
+	inventory_image = "color_armors_red_tin_lump.png",
+})
+
+minetest.register_craftitem("color_armors:yellow_tin_lump", {
+	description = ("Yellow Tin Lump"),
+	inventory_image = "color_armors_yellow_tin_lump.png",
+})
+
+minetest.register_craftitem("color_armors:blue_tin_ingot", {
+	description = ("Blue Tin Ingot"),
+	inventory_image = "color_armors_blue_tin_ingot.png",
+})
+
+minetest.register_craftitem("color_armors:green_tin_ingot", {
+	description = ("Green Tin Ingot"),
+	inventory_image = "color_armors_green_tin_ingot.png",
+})
+
+minetest.register_craftitem("color_armors:red_tin_ingot_tin_ingot", {
+	description = ("Red Tin Ingot"),
+	inventory_image = "color_armors_red_tin_ingot.png",
+})
+
+minetest.register_craftitem("color_armors:yellow_tin_ingot", {
+	description = ("Yellow Tin Ingot"),
+	inventory_image = "color_armors_yellow_tin_ingot.png",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:blue_tin_ingot",
+	recipe = "color_armors:blue_tin_lump",
+	cooktime = 15,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:green_tin_ingot",
+	recipe = "color_armors:green_tin_lump",
+	cooktime = 15,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:red_tin_ingot_tin_ingot",
+	recipe = "color_armors:red_tin_ingot_tin_lump",
+	cooktime = 15,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:yellow_tin_ingot",
+	recipe = "color_armors:yellow_tin_lump",
+	cooktime = 15,
+})
+
 if minetest.get_modpath("3d_armor") then
 	armor:register_armor("color_armors:blue_helmet", {
 		description = "Blue Helmet",
@@ -151,136 +219,136 @@ if minetest.get_modpath("3d_armor") then
 	minetest.register_craft({
 		output = "color_armors:blue_helmet",
 		recipe = {
-			{"wool:blue", "wool:blue", "wool:blue"},
-			{"wool:blue", "", "wool:blue"}
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:blue_chestplate",
 		recipe = {
-			{"wool:blue", "", "wool:blue"},
-			{"wool:blue", "wool:blue", "wool:blue"},
-			{"wool:blue", "wool:blue", "wool:blue"}
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:blue_leggings",
 		recipe = {
-			{"wool:blue", "wool:blue", "wool:blue"},
-			{"wool:blue", "", "wool:blue"},
-			{"wool:blue", "", "wool:blue"}
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:blue_boots",
 		recipe = {
-			{"wool:blue", "", "wool:blue"},
-			{"wool:blue", "", "wool:blue"}
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:green_helmet",
 		recipe = {
-			{"wool:dark_green", "wool:dark_green", "wool:dark_green"},
-			{"wool:dark_green", "", "wool:dark_green"}
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:green_chestplate",
 		recipe = {
-			{"wool:dark_green", "", "wool:dark_green"},
-			{"wool:dark_green", "wool:dark_green", "wool:dark_green"},
-			{"wool:dark_green", "wool:dark_green", "wool:dark_green"}
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:green_leggings",
 		recipe = {
-			{"wool:dark_green", "wool:dark_green", "wool:dark_green"},
-			{"wool:dark_green", "", "wool:dark_green"},
-			{"wool:dark_green", "", "wool:dark_green"}
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:green_boots",
 		recipe = {
-			{"wool:dark_green", "", "wool:dark_green"},
-			{"wool:dark_green", "", "wool:dark_green"}
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:red_helmet",
 		recipe = {
-			{"wool:red", "wool:red", "wool:red"},
-			{"wool:red", "", "wool:red"}
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:red_chestplate",
 		recipe = {
-			{"wool:red", "", "wool:red"},
-			{"wool:red", "wool:red", "wool:red"},
-			{"wool:red", "wool:red", "wool:red"}
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:red_leggings",
 		recipe = {
-			{"wool:red", "wool:red", "wool:red"},
-			{"wool:red", "", "wool:red"},
-			{"wool:red", "", "wool:red"}
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:red_boots",
 		recipe = {
-			{"wool:red", "", "wool:red"},
-			{"wool:red", "", "wool:red"}
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:yellow_helmet",
 		recipe = {
-			{"wool:yellow", "wool:yellow", "wool:yellow"},
-			{"wool:yellow", "", "wool:yellow"}
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:yellow_chestplate",
 		recipe = {
-			{"wool:yellow", "", "wool:yellow"},
-			{"wool:yellow", "wool:yellow", "wool:yellow"},
-			{"wool:yellow", "wool:yellow", "wool:yellow"}
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:yellow_leggings",
 		recipe = {
-			{"wool:yellow", "wool:yellow", "wool:yellow"},
-			{"wool:yellow", "", "wool:yellow"},
-			{"wool:yellow", "", "wool:yellow"}
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"}
 		}
 	})
 
 	minetest.register_craft({
 		output = "color_armors:yellow_boots",
 		recipe = {
-			{"wool:yellow", "", "wool:yellow"},
-			{"wool:yellow", "", "wool:yellow"}
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"}
 		}
 	})
 end
