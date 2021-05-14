@@ -1,127 +1,382 @@
--- dye/init.lua
+minetest.register_craftitem("color_armors:blue_tin_lump", {
+	description = ("Blue Tin Lump"),
+	inventory_image = "color_armors_blue_tin_lump.png",
+})
 
-dye = {}
+minetest.register_craftitem("color_armors:green_tin_lump", {
+	description = ("Green Tin Lump"),
+	inventory_image = "color_armors_green_tin_lump.png",
+})
 
--- Load support for MT game translation.
-local S = minetest.get_translator("dye")
+minetest.register_craftitem("color_armors:red_tin_ingot_tin_lump", {
+	description = ("Red Tin Lump"),
+	inventory_image = "color_armors_red_tin_lump.png",
+})
 
--- Make dye names and descriptions available globally
+minetest.register_craftitem("color_armors:yellow_tin_lump", {
+	description = ("Yellow Tin Lump"),
+	inventory_image = "color_armors_yellow_tin_lump.png",
+})
 
-dye.dyes = {
-	{"white",      "White"},
-	{"grey",       "Grey"},
-	{"dark_grey",  "Dark Grey"},
-	{"black",      "Black"},
-	{"violet",     "Violet"},
-	{"blue",       "Blue"},
-	{"cyan",       "Cyan"},
-	{"dark_green", "Dark Green"},
-	{"green",      "Green"},
-	{"yellow",     "Yellow"},
-	{"brown",      "Brown"},
-	{"orange",     "Orange"},
-	{"red",        "Red"},
-	{"magenta",    "Magenta"},
-	{"pink",       "Pink"},
-}
+minetest.register_craftitem("color_armors:blue_tin_ingot", {
+	description = ("Blue Tin Ingot"),
+	inventory_image = "color_armors_blue_tin_ingot.png",
+})
 
--- Define items
+minetest.register_craftitem("color_armors:green_tin_ingot", {
+	description = ("Green Tin Ingot"),
+	inventory_image = "color_armors_green_tin_ingot.png",
+})
 
-for _, row in ipairs(dye.dyes) do
-	local name = row[1]
-	local description = row[2]
-	local groups = {dye = 1}
-	groups["color_" .. name] = 1
+minetest.register_craftitem("color_armors:red_tin_ingot_tin_ingot", {
+	description = ("Red Tin Ingot"),
+	inventory_image = "color_armors_red_tin_ingot.png",
+})
 
-	minetest.register_craftitem("dye:" .. name, {
-		inventory_image = "dye_" .. name .. ".png",
-		description = S(description .. " Dye"),
-		groups = groups
+minetest.register_craftitem("color_armors:yellow_tin_ingot", {
+	description = ("Yellow Tin Ingot"),
+	inventory_image = "color_armors_yellow_tin_ingot.png",
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:blue_tin_ingot",
+	recipe = "color_armors:blue_tin_lump",
+	cooktime = 15,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:green_tin_ingot",
+	recipe = "color_armors:green_tin_lump",
+	cooktime = 15,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:red_tin_ingot",
+	recipe = "color_armors:red_tin_lump",
+	cooktime = 15,
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "color_armors:yellow_tin_ingot",
+	recipe = "color_armors:yellow_tin_lump",
+	cooktime = 15,
+})
+
+if minetest.get_modpath("3d_armor") then
+	armor:register_armor("color_armors:blue_helmet", {
+		description = "Blue Helmet",
+		inventory_image = "color_armors_inv_helmet_blue.png",
+		groups = {armor_head=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
 	})
 
+	armor:register_armor("color_armors:blue_chestplate", {
+		description = "Blue Chestplate",
+		inventory_image = "color_armors_inv_chestplate_blue.png",
+		groups = {armor_torso=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:blue_leggings", {
+		description = "Blue Leggings",
+		inventory_image = "color_armors_inv_leggings_blue.png",
+		groups = {armor_legs=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:blue_boots", {
+		description = "Blue Boots",
+		inventory_image = "color_armors_inv_boots_blue.png",
+		groups = {armor_feet=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:green_helmet", {
+		description = "Green Helmet",
+		inventory_image = "color_armors_inv_helmet_green.png",
+		groups = {armor_head=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:green_chestplate", {
+		description = "Green Chestplate",
+		inventory_image = "color_armors_inv_chestplate_green.png",
+		groups = {armor_torso=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:green_leggings", {
+		description = "Green Leggings",
+		inventory_image = "color_armors_inv_leggings_green.png",
+		groups = {armor_legs=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:green_boots", {
+		description = "Green Boots",
+		inventory_image = "color_armors_inv_boots_green.png",
+		groups = {armor_feet=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:red_helmet", {
+		description = "Red Helmet",
+		inventory_image = "color_armors_inv_helmet_red.png",
+		groups = {armor_head=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:red_chestplate", {
+		description = "Red Chestplate",
+		inventory_image = "color_armors_inv_chestplate_red.png",
+		groups = {armor_torso=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:red_leggings", {
+		description = "Red Leggings",
+		inventory_image = "color_armors_inv_leggings_red.png",
+		groups = {armor_legs=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:red_boots", {
+		description = "Red Boots",
+		inventory_image = "color_armors_inv_boots_red.png",
+		groups = {armor_feet=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:yellow_helmet", {
+		description = "Yellow Helmet",
+		inventory_image = "color_armors_inv_helmet_yellow.png",
+		groups = {armor_head=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:yellow_chestplate", {
+		description = "Yellow Chestplate",
+		inventory_image = "color_armors_inv_chestplate_yellow.png",
+		groups = {armor_torso=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:yellow_leggings", {
+		description = "Yellow Leggings",
+		inventory_image = "color_armors_inv_leggings_yellow.png",
+		groups = {armor_legs=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=10},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+
+	armor:register_armor("color_armors:yellow_boots", {
+		description = "Yellow Boots",
+		inventory_image = "color_armors_inv_boots_yellow.png",
+		groups = {armor_feet=1, armor_heal=0, armor_use=2000, armor_fire=2},
+		armor_groups = {fleshy=5},
+		damage_groups = {cracky=2, snappy=1, level=3},
+		wear = 0,
+	})
+end
+
+--
+-- Crafting
+--
+if minetest.get_modpath("3d_armor") then
 	minetest.register_craft({
-		output = "dye:" .. name .. " 4",
+		output = "color_armors:blue_helmet",
 		recipe = {
-			{"group:flower,color_" .. name}
-		},
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"}
+		}
 	})
-end
 
--- Manually add coal -> black dye
-
-minetest.register_craft({
-	output = "dye:black 4",
-	recipe = {
-		{"group:coal"}
-	},
-})
-
--- Manually add blueberries->violet dye
-
-minetest.register_craft({
-	output = "dye:violet 2",
-	recipe = {
-		{"default:blueberries"}
-	},
-})
-
--- Mix recipes
-
-local dye_recipes = {
-	-- src1, src2, dst
-	-- RYB mixes
-	{"red", "blue", "violet"}, -- "purple"
-	{"yellow", "red", "orange"},
-	{"yellow", "blue", "green"},
-	-- RYB complementary mixes
-	{"yellow", "violet", "dark_grey"},
-	{"blue", "orange", "dark_grey"},
-	-- CMY mixes - approximation
-	{"cyan", "yellow", "green"},
-	{"cyan", "magenta", "blue"},
-	{"yellow", "magenta", "red"},
-	-- other mixes that result in a color we have
-	{"red", "green", "brown"},
-	{"magenta", "blue", "violet"},
-	{"green", "blue", "cyan"},
-	{"pink", "violet", "magenta"},
-	-- mixes with black
-	{"white", "black", "grey"},
-	{"grey", "black", "dark_grey"},
-	{"green", "black", "dark_green"},
-	{"orange", "black", "brown"},
-	-- mixes with white
-	{"white", "red", "pink"},
-	{"white", "dark_grey", "grey"},
-	{"white", "dark_green", "green"},
-}
-
-for _, mix in pairs(dye_recipes) do
 	minetest.register_craft({
-		type = "shapeless",
-		output = "dye:" .. mix[3] .. " 2",
-		recipe = {"dye:" .. mix[1], "dye:" .. mix[2]},
+		output = "color_armors:blue_chestplate",
+		recipe = {
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:blue_leggings",
+		recipe = {
+			{"color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:blue_boots",
+		recipe = {
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"},
+			{"color_armors:blue_tin_ingot", "", "color_armors:blue_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:green_helmet",
+		recipe = {
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:green_chestplate",
+		recipe = {
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:green_leggings",
+		recipe = {
+			{"color_armors:green_tin_ingot", "color_armors:green_tin_ingot", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:green_boots",
+		recipe = {
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"},
+			{"color_armors:green_tin_ingot", "", "color_armors:green_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:red_helmet",
+		recipe = {
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:red_chestplate",
+		recipe = {
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:red_leggings",
+		recipe = {
+			{"color_armors:red_tin_ingot", "color_armors:red_tin_ingot", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:red_boots",
+		recipe = {
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"},
+			{"color_armors:red_tin_ingot", "", "color_armors:red_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:yellow_helmet",
+		recipe = {
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:yellow_chestplate",
+		recipe = {
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:yellow_leggings",
+		recipe = {
+			{"color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:yellow_boots",
+		recipe = {
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"},
+			{"color_armors:yellow_tin_ingot", "", "color_armors:yellow_tin_ingot"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:blue_tin_lump",
+		recipe = {
+			{"dye:blue","default:tin_lump"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:green_tin_lump",
+		recipe = {
+			{"dye:green","default:tin_lump"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:red_tin_lump",
+		recipe = {
+			{"dye:red","default:tin_lump"}
+		}
+	})
+
+	minetest.register_craft({
+		output = "color_armors:yellow_tin_lump",
+		recipe = {
+			{"dye:yellow","default:tin_lump"}
+		}
 	})
 end
-
--- Dummy calls to S() to allow translation scripts to detect the strings.
--- To update this run:
--- for _,e in ipairs(dye.dyes) do print(("S(%q)"):format(e[2].." Dye")) end
-
---[[
-S("White Dye")
-S("Grey Dye")
-S("Dark Grey Dye")
-S("Black Dye")
-S("Violet Dye")
-S("Blue Dye")
-S("Cyan Dye")
-S("Dark Green Dye")
-S("Green Dye")
-S("Yellow Dye")
-S("Brown Dye")
-S("Orange Dye")
-S("Red Dye")
-S("Magenta Dye")
-S("Pink Dye")
---]]
